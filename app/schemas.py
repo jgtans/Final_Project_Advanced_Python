@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from typing import List
+from typing import List, Optional
 
 
 class ReviewOut(BaseModel):
@@ -34,8 +34,8 @@ class ProductOut(BaseModel):
     title: str
     description: str
     price: float
-    brand: BrandOut
-    category: CategoryOut
+    brand: Optional[BrandOut] = None
+    category: Optional[CategoryOut] = None
     reviews: List[ReviewOut] = []
     
     class Config:

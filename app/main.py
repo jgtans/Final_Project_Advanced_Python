@@ -14,7 +14,7 @@ async def lifespan(app: FastAPI):
     yield
 
 
-app = FastAPI(title="DummyJSON Catalog API", lifespan=lifespan)
+app = FastAPI(title="Wildberries Catalog API", lifespan=lifespan)
 
 app.include_router(categories.router, tags=["Categories"])
 app.include_router(brands.router, tags=["Brands"])
@@ -23,4 +23,4 @@ app.include_router(products.router, tags=["Products"])
 
 @app.get("/")
 async def root():
-    return {"message": "Welcome to DummyJSON Catalog API. Visit /docs for API documentation."}
+    return {"message": "Welcome to Wildberries Catalog API. Visit /docs for API documentation."}
